@@ -1,0 +1,29 @@
+<div class="image-info-container">
+  <div class="top-header">
+    <div class="image-description">
+      <ng-container
+        [ngTemplateOutlet]="imageTopDescription"
+        [ngTemplateOutletContext]="{image: SelectedImage | async}">
+      </ng-container>
+    </div>
+  </div>
+  <div class="image-preview">
+    <ng-container
+      [ngTemplateOutlet]="imagePreview"
+      [ngTemplateOutletContext]="{image: SelectedImage | async}">
+    </ng-container>
+  </div>
+</div>
+<ng-template #imageTopDescription let-image="image">
+  <span><i>#</i>{{image?.id}}</span><span class="split"></span>
+  <span><i>&#11109;</i>{{image?.height}}</span><span class="split"></span>
+  <span><i>&#11108;</i>{{image?.width}}</span><span class="split"></span>
+  <span><i>&#128247;</i>{{image?.author}}</span>
+</ng-template>
+<ng-template #imagePreview let-image="image">
+  <img
+    [style.width]="image?.width > image?.height ? '100%' : 'auto'"
+    [style.height]="image?.height >= image?.width ? '100%' : 'auto'"
+    class="selected-image"
+    [src]="image?.download_url">
+</ng-template>

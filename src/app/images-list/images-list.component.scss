@@ -1,0 +1,43 @@
+.example-viewport {
+  direction: rtl;
+  flex-grow: 1;
+}
+
+.example-item {
+  cursor: pointer;
+  direction: ltr;
+  img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+  }
+}
+.filter-toolbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  .mat-button-toggle {
+    width: 50%;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 100px;
+  }
+}
+.favorite {
+  display: block;
+  position: absolute;
+  font-size: 20px;
+  font-style: inherit;
+  margin-top: 6px;
+  cursor: grabbing;
+}
+.list-items {
+  display: flex;flex-direction: column;height: 100%
+}
+
+@media only screen and (max-width: 1032px) {
+  .list-items {
+  }
+}
